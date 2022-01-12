@@ -24,6 +24,8 @@ export default function SearchResultListItem({movie}) {
       />
       <CardContent sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
         <Typography gutterBottom variant="h5" component="div">{movie.Title}</Typography>
+        <Typography gutterBottom variant="h6" component="div">{`Year: ${movie.Year}`}</Typography>
+        <Typography gutterBottom variant="h6" component="div">{`Type: ${movie.Type}`}</Typography>
         <CardActions sx={{display: 'flex', justifyContent: 'center'}}>
         <Button size="small" onClick={() => navigate(`/details/${movie.imdbID}`)}>Learn More</Button>
       </CardActions>

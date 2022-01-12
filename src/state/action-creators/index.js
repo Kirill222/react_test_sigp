@@ -11,3 +11,10 @@ export const setSearchRequestAC = (request) => {
         payload: request,
     })
 }
+
+export const setMovieDetailsAC = (movieDetails) => {
+    return ({
+        type: 'SET_MOVIE_DETAILS',
+        payload: movieDetails,
+    })
+}
