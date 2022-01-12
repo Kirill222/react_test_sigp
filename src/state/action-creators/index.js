@@ -1,4 +1,4 @@
-export const setSearchedResult = (searchResult) => {
+export const setSearchedResultAC = (searchResult) => {
     return ({
             type: 'SET_SEARCH_RESULT',
             payload: searchResult,

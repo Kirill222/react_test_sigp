@@ -77,10 +77,8 @@ const initialState =  {
 
 const searchResultReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "deposit":
-            return state + action.payload
-        case "withdraw":
-            return state - action.payload
+        case "SET_SEARCH_RESULT":
+            return {...state, ...action.payload}        
         default:
             return state
     }

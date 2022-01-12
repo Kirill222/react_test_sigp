@@ -12,7 +12,7 @@ export const SearchResultList = () => {
         <div className='search-result-list'>
             {
                 movies.map(m => {
-                    return <SearchResultListItem movie={m} />
+                    return <SearchResultListItem movie={m} key={m.imdbID}/>
                 })
             }
         </div>
