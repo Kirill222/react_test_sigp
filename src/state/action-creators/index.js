@@ -4,3 +4,10 @@ export const setSearchedResultAC = (searchResult) => {
             payload: searchResult,
         })    
 }
+
+export const setSearchRequestAC = (request) => {
+    return ({
+        type: 'SET_SEARCH_REQUEST',
+        payload: request,
+    })
+}

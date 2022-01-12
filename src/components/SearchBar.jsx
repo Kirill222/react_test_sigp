@@ -6,7 +6,7 @@ import './SearchBar.css'
 
 import {useSelector, useDispatch} from 'react-redux'
 
-import {setSearchedResultAC} from '../state/action-creators/'
+import {setSearchedResultAC, setSearchRequestAC} from '../state/action-creators/'
 
 
 const API_KEY = '81e6b887'
@@ -31,6 +31,7 @@ export const SearchBar = () => {
         setData(response.data)
 
         dispatch(setSearchedResultAC(response.data))
+        dispatch(setSearchRequestAC(inputValue))
     }
 
     console.log(data)
