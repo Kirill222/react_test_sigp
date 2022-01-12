@@ -40,7 +40,7 @@ export const SearchBar = () => {
         <div className="search-bar">
             <TextField id="outlined-basic" label="Movie" variant="outlined" value={inputValue} onChange={handleInputChange}/>
             <Button variant="contained" sx={{height: '100%'}} onClick={handleClick}>Search...</Button>
-            <p>{`There are ${totalResults} that suit your search request`}</p>
+            <p>{`${totalResults} items found that suit your search request`}</p>
         </div>
     )
 }

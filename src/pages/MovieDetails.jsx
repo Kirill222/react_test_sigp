@@ -1,9 +1,10 @@
-import React from 'react'
+import {DetailsComponent} from '../components/DetailsComponent'
 
 export const MovieDetails = () => {
     return (
         <div>
-            <h1>hi there</h1>
+            <h1>Movie Details:</h1>
+            <DetailsComponent />
         </div>
     )
 }
