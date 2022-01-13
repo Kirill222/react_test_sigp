@@ -18,3 +18,10 @@ export const setMovieDetailsAC = (movieDetails) => {
         payload: movieDetails,
     })
 }
+
+export const setFavoriteMovieAC = (fav) => {
+    return ({
+        type: 'SET_FAVORITE_MOVIE',
+        payload: !fav,
+    })
+}

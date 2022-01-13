@@ -2,8 +2,15 @@ import {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
+import { IconContext } from "react-icons";
 
-import {setMovieDetailsAC} from '../state/action-creators/'
+import {setMovieDetailsAC, setFavoriteMovieAC} from '../state/action-creators/'
+import DetailsTable from './DetailsTable'
+import { PosterPlot } from './PosterPlot'
+
+
+
 
 const API_KEY = '81e6b887'
 
@@ -12,6 +19,8 @@ export const DetailsComponent = () => {
     const {movieId} = useParams()
     const dispatch = useDispatch()
     const movie = useSelector(state => state.movieDetails)
+    const isFavorite = useSelector(state => state.isFavorite)
+    console.log(isFavorite);
 
     useEffect(() => {
         const getData = async () => {
@@ -22,11 +31,22 @@ export const DetailsComponent = () => {
         getData()
     }, [movieId, dispatch])
 
-    console.log(movie);   
+    console.log(movie);  
+    
+    const handleFavIcon = () => {
+        dispatch(setFavoriteMovieAC(isFavorite))
+    }
 
     return (
         <div>
-            hi
+            <IconContext.Provider value={{ color: "gold"}}>
+                <h1>{movie.Title} ({movie.Year}) {!isFavorite ? <AiOutlineStar style={{alignSelf: 'center'}} onClick={handleFavIcon} /> : <AiFillStar onClick={handleFavIcon} />}</h1>
+            </IconContext.Provider>
+
+            <PosterPlot source={movie.Poster} plot={movie.Plot} actors={movie.Actors} rating={movie.imdbRating}/>
+
+            <DetailsTable movie={movie} />
+
         </div>
     )
 }
