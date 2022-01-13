@@ -38,25 +38,28 @@ export const DetailsComponent = () => {
         getData()
     }, [movieId, dispatch])
 
+    const ifHasArray = favoriteMovies.filter(fm => {
+        return fm.id === movie.imdbID
+    })
+
+    //check favorite on page load
     useEffect(() => {
-        if(favoriteMovies.includes(movie.imdbID)) {
+        if(ifHasArray[0]) {
             dispatch(setFavoriteMovieAC(true))
         } else {
             dispatch(setFavoriteMovieAC(false))
         }
-    })
+    }, [ifHasArray])
 
-    console.log(movie);  
     
     const handleFavIcon = () => {
         console.log(favoriteMovies)        
 
-        if(!favoriteMovies.includes(movie.imdbID)) {
+        if(!ifHasArray[0]) {
             dispatch(setFavoriteMovieAC(true))
-            dispatch(setFavoriteMovieToCollectionAC(movie.imdbID))
+            dispatch(setFavoriteMovieToCollectionAC({id: movie.imdbID, title: movie.Title}))
         }
-
-        if(favoriteMovies.includes(movie.imdbID)) {
+        if(ifHasArray[0]) {
             dispatch(setFavoriteMovieAC(false))
             dispatch(removeMovieFromCollectionAC(movie.imdbID))            
         }        

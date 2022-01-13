@@ -27,10 +27,10 @@ export const setFavoriteMovieAC = (fav) => {
 }
 
 //favorite movies array
-export const setFavoriteMovieToCollectionAC = (movieId) => {
+export const setFavoriteMovieToCollectionAC = (movieObject) => {
     return ({
         type: 'SET_FAVORITE_MOVIE_TO_COLLECTION',
-        payload: movieId,
+        payload: movieObject,
     })
 }
 

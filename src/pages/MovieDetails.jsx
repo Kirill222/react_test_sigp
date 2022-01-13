@@ -8,8 +8,7 @@ export const MovieDetails = () => {
     console.log(favoriteMovies)
 
     return (
-        <div>
-            
+        <div>            
             <DetailsComponent />
         </div>
     )
