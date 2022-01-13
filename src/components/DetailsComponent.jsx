@@ -5,7 +5,13 @@ import axios from 'axios'
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { IconContext } from "react-icons";
 
-import {setMovieDetailsAC, setFavoriteMovieAC} from '../state/action-creators/'
+import {
+    setMovieDetailsAC, 
+    setFavoriteMovieAC, 
+    setFavoriteMovieToCollectionAC,
+    removeMovieFromCollectionAC,
+} from '../state/action-creators/'
+
 import DetailsTable from './DetailsTable'
 import { PosterPlot } from './PosterPlot'
 
@@ -20,6 +26,7 @@ export const DetailsComponent = () => {
     const dispatch = useDispatch()
     const movie = useSelector(state => state.movieDetails)
     const isFavorite = useSelector(state => state.isFavorite)
+    const favoriteMovies = useSelector(state => state.favoriteMovies)
     console.log(isFavorite);
 
     useEffect(() => {
@@ -34,7 +41,18 @@ export const DetailsComponent = () => {
     console.log(movie);  
     
     const handleFavIcon = () => {
-        dispatch(setFavoriteMovieAC(isFavorite))
+        console.log(favoriteMovies)        
+
+        if(!favoriteMovies.includes(movie.imdbID)) {
+            dispatch(setFavoriteMovieAC(true))
+            dispatch(setFavoriteMovieToCollectionAC(movie.imdbID))
+        }
+
+        if(favoriteMovies.includes(movie.imdbID)) {
+            dispatch(setFavoriteMovieAC(false))
+            dispatch(removeMovieFromCollectionAC(movie.imdbID))            
+        }        
+        console.log(favoriteMovies)
     }
 
     return (

@@ -22,6 +22,23 @@ export const setMovieDetailsAC = (movieDetails) => {
 export const setFavoriteMovieAC = (fav) => {
     return ({
         type: 'SET_FAVORITE_MOVIE',
-        payload: !fav,
+        payload: fav,
     })
 }
+
+//favorite movies array
+export const setFavoriteMovieToCollectionAC = (movieId) => {
+    return ({
+        type: 'SET_FAVORITE_MOVIE_TO_COLLECTION',
+        payload: movieId,
+    })
+}
+
+export const removeMovieFromCollectionAC = (movieId) => {
+    return ({
+        type: 'REMOVE_MOVIE_FROM_COLLECTION',
+        payload: movieId,
+    })
+}
+
+
