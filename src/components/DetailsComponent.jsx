@@ -38,6 +38,14 @@ export const DetailsComponent = () => {
         getData()
     }, [movieId, dispatch])
 
+    useEffect(() => {
+        if(favoriteMovies.includes(movie.imdbID)) {
+            dispatch(setFavoriteMovieAC(true))
+        } else {
+            dispatch(setFavoriteMovieAC(false))
+        }
+    })
+
     console.log(movie);  
     
     const handleFavIcon = () => {
