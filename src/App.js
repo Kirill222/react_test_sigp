@@ -7,6 +7,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 import {useSelector, useDispatch} from 'react-redux'
+import ResponsiveAppBar from './components/ResponsiveAppBar'
 
 
 const API_KEY = '81e6b887'
@@ -27,6 +28,7 @@ function App() {
 
     return (
       <div className="App">
+        <ResponsiveAppBar />
         <Routes>
           <Route path="/" element={<MovieSearch movies={movies} />}/>
           <Route path="/details/:movieId" element={<MovieDetails />}/>
