@@ -26,7 +26,16 @@ export function* watchLoadMovieDetails() {
     yield takeEvery('LOAD_MOVIE_DETAILS', loadMovieDetails)     
 }
 
+//PAGINATION BLOCK 
+export function* loadNewPage(action) {
+    const {request, page} = action.payload
+    const response = yield call(axios.get, `https://www.omdbapi.com/?apikey=${API_KEY}&s=${request}&page=${page}`)
+    yield put({type: 'SET_SEARCH_RESULT', payload: response.data})
+}
 
+export function* watchPagination() {
+    yield takeEvery('PAGINATION', loadNewPage)     
+}
 
 
 export default function* rootSaga() {
@@ -34,5 +43,6 @@ export default function* rootSaga() {
      yield all([
         watchLoadOnRequest(),
         watchLoadMovieDetails(),
+        watchPagination(),
     ])
 }

@@ -17,10 +17,8 @@ const totalResults = useSelector(state => state.searchResult.totalResults)
 const request = useSelector(state => state.request)
 const numberOfPages = Math.ceil(totalResults/10)
 
-const changePage = async (e, page) => {
-    const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${request}&page=${page}`)
-    console.log(response.data)
-    dispatch(setSearchedResultAC(response.data))
+const changePage = async (e, page) => {    
+    dispatch({type: 'PAGINATION', payload: {request, page}})
 }
 
   return (
