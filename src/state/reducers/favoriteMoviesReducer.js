@@ -1,4 +1,4 @@
-const initialState =  [{id: 'ttt', title: 'rrr'}]
+const initialState =  []
 
 const favoriteMoviesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -6,7 +6,7 @@ const favoriteMoviesReducer = (state = initialState, action) => {
             return [...state, action.payload] 
         case "REMOVE_MOVIE_FROM_COLLECTION":
             const filtered = state.filter(m => {
-                return m.id !== action.payload
+                return m.imdbID !== action.payload
             })
             return [...filtered]   
         default:

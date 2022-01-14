@@ -39,7 +39,7 @@ export const DetailsComponent = () => {
     }, [movieId, dispatch])
 
     const ifHasArray = favoriteMovies.filter(fm => {
-        return fm.id === movie.imdbID
+        return fm.imdbID === movie.imdbID
     })
 
     //check favorite on page load
@@ -57,7 +57,7 @@ export const DetailsComponent = () => {
 
         if(!ifHasArray[0]) {
             dispatch(setFavoriteMovieAC(true))
-            dispatch(setFavoriteMovieToCollectionAC({id: movie.imdbID, title: movie.Title}))
+            dispatch(setFavoriteMovieToCollectionAC({imdbID: movie.imdbID, Title: movie.Title, Year: movie.Year, Type: movie.Type, Poster: movie.Poster}))
         }
         if(ifHasArray[0]) {
             dispatch(setFavoriteMovieAC(false))

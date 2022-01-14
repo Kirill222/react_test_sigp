@@ -19,7 +19,7 @@ export default function SearchResultListItem({movie}) {
         component="img"
         // height="350"
         image={movie.Poster}
-        alt="green iguana"
+        alt={movie.Title}
         sx={{width: '146px', height: '219px', aspectRatio: 'auto 146 / 219'}}
       />
       <CardContent sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>

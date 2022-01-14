@@ -1,12 +1,9 @@
 import React from 'react'
 import SearchResultListItem from './SearchResultListItem'
-import {useSelector, useDispatch} from 'react-redux'
 import './SearchResultList.css'
 
 
-export const SearchResultList = () => {
-
-    const movies = useSelector(state => state.searchResult.Search)
+export const SearchResultList = ({movies}) => {    
 
     return (
         <div className='search-result-list'>

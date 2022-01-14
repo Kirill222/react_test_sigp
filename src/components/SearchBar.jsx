@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import axios from 'axios'
 import './SearchBar.css'
+import {Link} from 'react-router-dom'
 
 import {useSelector, useDispatch} from 'react-redux'
 
@@ -41,6 +42,7 @@ export const SearchBar = () => {
             <TextField id="outlined-basic" label="Movie" variant="outlined" value={inputValue} onChange={handleInputChange}/>
             <Button variant="contained" sx={{height: '100%'}} onClick={handleClick}>Search...</Button>
             <p>{`${totalResults} items found that suit your search request`}</p>
+            <Link to="/favorite">Favorite movies</Link>
         </div>
     )
 }
