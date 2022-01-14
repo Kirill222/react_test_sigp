@@ -56,12 +56,21 @@ export const DetailsComponent = () => {
         console.log(favoriteMovies)        
 
         if(!ifHasArray[0]) {
+
+            localStorage.setItem('favoriteMovies', JSON.stringify([...favoriteMovies, {imdbID: movie.imdbID, Title: movie.Title, Year: movie.Year, Type: movie.Type, Poster: movie.Poster}] ))
+
             dispatch(setFavoriteMovieAC(true))
             dispatch(setFavoriteMovieToCollectionAC({imdbID: movie.imdbID, Title: movie.Title, Year: movie.Year, Type: movie.Type, Poster: movie.Poster}))
         }
-        if(ifHasArray[0]) {
+        if(ifHasArray[0]) { 
+
+            const filtered = favoriteMovies.filter(fm => {
+                return fm.imdbID !== ifHasArray[0].imdbID
+            })
+            localStorage.setItem('favoriteMovies', JSON.stringify([...filtered] ))            
+
             dispatch(setFavoriteMovieAC(false))
-            dispatch(removeMovieFromCollectionAC(movie.imdbID))            
+            dispatch(removeMovieFromCollectionAC(movie.imdbID))
         }        
         console.log(favoriteMovies)
     }

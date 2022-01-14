@@ -1,12 +1,10 @@
 import React from 'react'
 
-import {useSelector} from 'react-redux'
 import { SearchResultList } from '../components/SearchResultList'
 
-export const FavoriteMovies = () => {
+export const FavoriteMovies = () => {    
 
-    const favoriteMovies = useSelector(state => state.favoriteMovies)
-    console.log(favoriteMovies)
+    const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies'))
 
     return (
         <div>
