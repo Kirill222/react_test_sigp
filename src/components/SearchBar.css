@@ -4,3 +4,11 @@
     max-width: 960px;
     margin: 0 auto;
 }
+
+
+@media screen and (max-width: 768px) {
+    .search-elements {
+        display: flex;
+        flex-direction: column;
+    }
+}

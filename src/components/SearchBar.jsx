@@ -21,7 +21,7 @@ export const SearchBar = () => {
 
     return (
         <div className="search-bar">
-            <div>
+            <div className="search-elements">
                 <TextField id="outlined-basic" label="Movie" variant="outlined" value={inputValue} onChange={handleInputChange}/>
                 <Button variant="contained" sx={{height: '100%'}} onClick={(() => dispatch({type: 'LOAD_DATA_ON_REQUEST', payload: inputValue}))}>Search...</Button>
 

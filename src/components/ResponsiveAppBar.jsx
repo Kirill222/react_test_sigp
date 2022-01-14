@@ -39,7 +39,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl" sx={{maxWidth: '960px', margin: '0 auto'}}>
         <Toolbar disableGutters> 
          
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: 'flex' }}>
             
                 <MenuItem>
                   <Link to="/" style={{textDecoration: 'none', color: 'white'}}><Typography textAlign="center">Home</Typography></Link>

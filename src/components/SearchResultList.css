@@ -7,3 +7,11 @@
 
     margin-top: 25px;
 }
+
+@media screen and (max-width: 768px) {
+
+    .search-result-list {
+        grid-template-columns: 1fr;
+    }
+
+}
