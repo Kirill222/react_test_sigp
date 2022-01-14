@@ -29,13 +29,8 @@ export const DetailsComponent = () => {
     const favoriteMovies = useSelector(state => state.favoriteMovies)
     console.log(isFavorite);
 
-    useEffect(() => {
-        const getData = async () => {
-            const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}`)
-
-            dispatch(setMovieDetailsAC(response.data))
-        }
-        getData()
+    useEffect(() => { 
+        dispatch({type: 'LOAD_MOVIE_DETAILS', payload: movieId})
     }, [movieId, dispatch])
 
     const ifHasArray = favoriteMovies.filter(fm => {
