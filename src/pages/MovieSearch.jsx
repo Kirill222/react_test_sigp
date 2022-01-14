@@ -13,8 +13,12 @@ export const MovieSearch = () => {
         <div>
             <h1>Movie search:</h1>      
             <SearchBar />
-            <SearchResultList movies={movies} />
-            <Pagination />
+            {movies ?   <div>
+                            <SearchResultList movies={movies} />
+                            <Pagination />
+                        </div>
+                        : <h3>Please, enter the movie title to search</h3>}
+            
         </div>
     )
 }

@@ -38,9 +38,11 @@ export const SearchBar = () => {
 
     return (
         <div className="search-bar">
-            <TextField id="outlined-basic" label="Movie" variant="outlined" value={inputValue} onChange={handleInputChange}/>
-            <Button variant="contained" sx={{height: '100%'}} onClick={handleClick}>Search...</Button>
-            <p>{`${totalResults} items found that suit your search request`}</p>
+            <div>
+                <TextField id="outlined-basic" label="Movie" variant="outlined" value={inputValue} onChange={handleInputChange}/>
+                <Button variant="contained" sx={{height: '100%'}} onClick={handleClick}>Search...</Button>
+            </div>
+            {totalResults && <p>{`${totalResults} items found that suit your search request`}</p>}
         </div>
     )
 }
