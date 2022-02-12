@@ -9,12 +9,15 @@ import {
   PosterWrapper,
 } from './SearchItemStyles'
 
+import noposter from '../assets/images/noposter.png'
+
 export const SearchItem = ({ movie }) => {
   console.log(movie.Title)
+
   return (
     <ItemCard>
       <PosterWrapper>
-        <PosterImg src={movie.Poster} />
+        <PosterImg src={movie.Poster !== 'N/A' ? movie.Poster : noposter} />
       </PosterWrapper>
       <CardContent>
         <CardTitle>{movie.Title}</CardTitle>
