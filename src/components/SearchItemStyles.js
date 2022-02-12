@@ -10,10 +10,13 @@ export const ItemCard = styled.div`
   background: #d1c4e9;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.25);
+
+  background-image: url(${img});
+  background-size: cover;
 `
 
 export const PosterWrapper = styled.div`
-  width: 35%;
+  width: 150px;
   overflow: hidden;
 `
 
@@ -24,7 +27,7 @@ export const PosterImg = styled.img`
 
 export const CardContent = styled.div`
   width: calc(100% - 150px);
-  background-image: url(${img});
+
   padding: 15px;
   overflow: hidden;
 `
