@@ -15,14 +15,16 @@ function App() {
   console.log(totalResults, numberOfPages, movies)
 
   return (
-    <div className='App'>
+    <>
       <ResponsiveAppBar />
-      <Routes>
-        <Route path='/' element={<MovieSearch movies={movies} />} />
-        <Route path='/details/:movieId' element={<MovieDetails />} />
-        <Route path='/favorite' element={<FavoriteMovies />} />
-      </Routes>
-    </div>
+      <div className='App'>
+        <Routes>
+          <Route path='/' element={<MovieSearch movies={movies} />} />
+          <Route path='/details/:movieId' element={<MovieDetails />} />
+          <Route path='/favorite' element={<FavoriteMovies />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 
