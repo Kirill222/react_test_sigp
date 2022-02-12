@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 const ResponsiveAppBar = () => {
   return (
-    <AppBar position='static'>
+    <AppBar position='static' sx={{ marginBottom: '50px' }}>
       <Container maxWidth='xl' sx={{ maxWidth: '960px', margin: '0 auto' }}>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex' }}>

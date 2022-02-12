@@ -10,8 +10,6 @@ export const MovieSearch = () => {
 
   return (
     <div>
-      <h1>Movie search:</h1>
-
       <SearchForm />
       {movies ? (
         <div>
@@ -19,7 +17,9 @@ export const MovieSearch = () => {
           <Pagination />
         </div>
       ) : (
-        <h3>Please, enter the movie title to search</h3>
+        <h3 style={{ fontSize: '12px', color: 'crimson' }}>
+          Please, enter the movie title to search
+        </h3>
       )}
     </div>
   )
