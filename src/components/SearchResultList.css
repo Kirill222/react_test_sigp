@@ -1,17 +1,16 @@
 .search-result-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 960px;
-    margin: 0 auto;
-    gap: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 
-    margin-top: 25px;
+  margin: 0 auto;
+  gap: 25px;
+
+  margin-top: 25px;
 }
 
 @media screen and (max-width: 768px) {
-
-    .search-result-list {
-        grid-template-columns: 1fr;
-    }
-
+  .search-result-list {
+    grid-template-columns: 1fr;
+  }
 }

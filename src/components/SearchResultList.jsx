@@ -1,17 +1,14 @@
 import React from 'react'
-import SearchResultListItem from './SearchResultListItem'
 import './SearchResultList.css'
 
+import { SearchItem } from './SearchItem'
 
-export const SearchResultList = ({movies}) => {    
-
-    return (
-        <div className='search-result-list'>
-            {
-                movies.map(m => {
-                    return <SearchResultListItem movie={m} key={m.imdbID}/>
-                })
-            }
-        </div>
-    )
+export const SearchResultList = ({ movies }) => {
+  return (
+    <div className='search-result-list'>
+      {movies.map((m) => {
+        return <SearchItem movie={m} key={m.imdbID} />
+      })}
+    </div>
+  )
 }
