@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { MovieSearch } from './pages/MovieSearch'
 import { MovieDetails } from './pages/MovieDetails'
 import { FavoriteMovies } from './pages/FavoriteMovies'
@@ -18,10 +18,20 @@ function App() {
     <>
       <ResponsiveAppBar />
       <div className='App'>
-        <Routes>
-          <Route path='/' element={<MovieSearch movies={movies} />} />
-          <Route path='/details/:movieId' element={<MovieDetails />} />
-          <Route path='/favorite' element={<FavoriteMovies />} />
+        <Routes basename={process.env.PUBLIC_URL}>
+          <Route
+            path='/react_test_sigp/'
+            element={<MovieSearch movies={movies} />}
+          />
+          <Route
+            path='/react_test_sigp/details/:movieId'
+            element={<MovieDetails />}
+          />
+          <Route
+            path='/react_test_sigp/favorite'
+            element={<FavoriteMovies />}
+          />
+          <Route path='*' element={<Navigate to='/react_test_sigp/' />} />
         </Routes>
       </div>
     </>

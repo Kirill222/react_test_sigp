@@ -14,13 +14,16 @@ const ResponsiveAppBar = () => {
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
             <MenuItem>
-              <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+              <Link
+                to='/react_test_sigp/'
+                style={{ textDecoration: 'none', color: 'white' }}
+              >
                 <Typography textAlign='center'>Home</Typography>
               </Link>
             </MenuItem>
             <MenuItem>
               <Link
-                to='/favorite'
+                to='/react_test_sigp/favorite'
                 style={{ textDecoration: 'none', color: 'white' }}
               >
                 <Typography textAlign='center'>Favorite movies</Typography>

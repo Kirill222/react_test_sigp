@@ -6,6 +6,16 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 
 export default function DetailsTable({ movie }) {
+  console.log(movie)
+
+  const bbb = Object.values(movie).filter((val) => {
+    //console.log(val)
+    if (val !== 'N/A') {
+      return val
+    }
+  })
+  console.log(bbb)
+
   return (
     <TableContainer
       component={Paper}

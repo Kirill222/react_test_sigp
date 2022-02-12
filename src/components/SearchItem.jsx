@@ -23,7 +23,7 @@ export const SearchItem = ({ movie }) => {
         <CardTitle>{movie.Title}</CardTitle>
         <CardYear>Year: {movie.Year}</CardYear>
         <CardType>Type: {movie.Type}</CardType>
-        <CardDetailsLink to={`/details/${movie.imdbID}`}>
+        <CardDetailsLink to={`/react_test_sigp/details/${movie.imdbID}`}>
           Learn more...
         </CardDetailsLink>
       </CardContent>
